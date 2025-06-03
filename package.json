@@ -1,0 +1,11 @@
+{
+  "name": "react-calendar-app",
+  "version": "1.0.0",
+  "description": "Advanced Calendar Application",
+  "author": "Gabriel Demetrios Lafis",
+  "license": "MIT",
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}
