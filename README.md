@@ -1,117 +1,97 @@
-# ⚛️ React Calendar App
+# React Calendar App
 
-> Professional React-Calendar-App - Created by Gabriel Demetrios Lafis
+Feature-rich calendar application built with React featuring month and week views, event creation and editing, search functionality, recurring events, and a responsive design.
 
-[![JavaScript](https://img.shields.io/badge/JavaScript-ES2024-F7DF1E.svg)](https://img.shields.io/badge/)
-[![React](https://img.shields.io/badge/React-18-61DAFB.svg)](https://img.shields.io/badge/)
-[![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-
-[English](#english) | [Português](#português)
+[English](#english) | [Portugues](#portugues)
 
 ---
 
 ## English
 
-### 🎯 Overview
+### Overview
 
-**React Calendar App** is a production-grade JavaScript application that showcases modern software engineering practices including clean architecture, comprehensive testing, containerized deployment, and CI/CD readiness.
+A React-based calendar application with full event management capabilities. Supports month and week views, event creation with time ranges, color coding, recurring event scheduling, and search filtering. Built with React hooks and no external calendar library dependencies.
 
-The codebase comprises **20 lines** of source code organized across **1 modules**, following industry best practices for maintainability, scalability, and code quality.
-
-### ✨ Key Features
-
-- **📐 Clean Architecture**: Modular design with clear separation of concerns
-- **🧪 Test Coverage**: Unit and integration tests for reliability
-- **📚 Documentation**: Comprehensive inline documentation and examples
-- **🔧 Configuration**: Environment-based configuration management
-
-### 🏗️ Architecture
+### Architecture
 
 ```mermaid
 graph TB
-    subgraph Core["🏗️ Core"]
-        A[Main Module]
-        B[Business Logic]
-        C[Data Processing]
+    subgraph UI Components
+        A[App] --> B[Calendar Header]
+        A --> C[Month View]
+        A --> D[Week View]
+        A --> E[Event Form Modal]
     end
-    
-    subgraph Support["🔧 Support"]
-        D[Configuration]
-        E[Utilities]
-        F[Tests]
+
+    subgraph Month View
+        C --> F[Day Headers]
+        C --> G[Calendar Grid]
+        G --> H[DayCell Component]
+        H --> I[Event Tags]
     end
-    
-    A --> B --> C
-    D --> A
-    E --> B
-    F -.-> B
-    
-    style Core fill:#e1f5fe
-    style Support fill:#f3e5f5
+
+    subgraph State Management
+        J[useState - currentDate]
+        K[useState - events]
+        L[useState - view mode]
+        M[useMemo - calendar grid]
+        N[useMemo - filtered events]
+    end
+
+    A --> J
+    A --> K
+    A --> L
+    G --> M
+    I --> N
+    E --> K
+
+    style UI Components fill:#e1f5fe
+    style Month View fill:#e8f5e9
+    style State Management fill:#fff3e0
 ```
 
-### 🚀 Quick Start
+### Features
 
-#### Prerequisites
+- Month and week calendar views with navigation
+- Event creation with title, description, time range, and color
+- Event editing and deletion
+- Color-coded event categories
+- Recurring events (daily, weekly, monthly)
+- Real-time search filtering across events
+- Today button for quick navigation
+- Responsive grid layout
 
-- Node.js 20+
-- npm or yarn
-
-#### Installation
+### Quick Start
 
 ```bash
-# Clone the repository
 git clone https://github.com/galafis/React-Calendar-App.git
 cd React-Calendar-App
-
-# Install dependencies
 npm install
-```
-
-#### Running
-
-```bash
-# Development mode
-npm run dev
-
-# Production build
-npm run build
 npm start
 ```
 
-### 📁 Project Structure
+### Project Structure
 
 ```
 React-Calendar-App/
-├── src/          # Source code
-│   └── App.js
-├── LICENSE
-├── README.md
-└── package.json
+├── src/
+│   └── App.js         # Main calendar application
+├── package.json
+└── README.md
 ```
 
-### 🛠️ Tech Stack
+### Tech Stack
 
-| Technology | Description | Role |
-|------------|-------------|------|
-| **JavaScript** | Core Language | Primary |
-| **React** | Frontend UI library | Framework |
+| Technology | Purpose |
+|------------|---------|
+| React | UI framework |
+| JavaScript | Application logic |
 
-### 🤝 Contributing
+### License
 
-Contributions are welcome! Please feel free to submit a Pull Request. For major changes, please open an issue first to discuss what you would like to change.
+MIT License - see [LICENSE](LICENSE) for details.
 
-1. Fork the project
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-### 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-### 👤 Author
+### Author
 
 **Gabriel Demetrios Lafis**
 - GitHub: [@galafis](https://github.com/galafis)
@@ -119,102 +99,64 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-## Português
+## Portugues
 
-### 🎯 Visão Geral
+### Visao Geral
 
-**React Calendar App** é uma aplicação JavaScript de nível profissional que demonstra práticas modernas de engenharia de software, incluindo arquitetura limpa, testes abrangentes, implantação containerizada e prontidão para CI/CD.
+Aplicacao de calendario baseada em React com capacidades completas de gerenciamento de eventos. Suporta visualizacoes mensal e semanal, criacao de eventos com intervalos de tempo, codificacao por cores, agendamento de eventos recorrentes e filtragem por busca.
 
-A base de código compreende **20 linhas** de código-fonte organizadas em **1 módulos**, seguindo as melhores práticas do setor para manutenibilidade, escalabilidade e qualidade de código.
-
-### ✨ Funcionalidades Principais
-
-- **📐 Clean Architecture**: Modular design with clear separation of concerns
-- **🧪 Test Coverage**: Unit and integration tests for reliability
-- **📚 Documentation**: Comprehensive inline documentation and examples
-- **🔧 Configuration**: Environment-based configuration management
-
-### 🏗️ Arquitetura
+### Arquitetura
 
 ```mermaid
 graph TB
-    subgraph Core["🏗️ Core"]
-        A[Main Module]
-        B[Business Logic]
-        C[Data Processing]
+    subgraph Componentes UI
+        A[App] --> B[Cabecalho do Calendario]
+        A --> C[Visao Mensal]
+        A --> D[Visao Semanal]
+        A --> E[Modal de Evento]
     end
-    
-    subgraph Support["🔧 Support"]
-        D[Configuration]
-        E[Utilities]
-        F[Tests]
+
+    subgraph Gerenciamento de Estado
+        J[useState - data atual]
+        K[useState - eventos]
+        L[useState - modo de visualizacao]
+        M[useMemo - grade do calendario]
     end
-    
-    A --> B --> C
-    D --> A
-    E --> B
-    F -.-> B
-    
-    style Core fill:#e1f5fe
-    style Support fill:#f3e5f5
+
+    A --> J
+    A --> K
+    A --> L
+    C --> M
+    E --> K
+
+    style Componentes UI fill:#e1f5fe
+    style Gerenciamento de Estado fill:#fff3e0
 ```
 
-### 🚀 Início Rápido
+### Funcionalidades
 
-#### Prerequisites
+- Visualizacoes mensal e semanal do calendario com navegacao
+- Criacao de eventos com titulo, descricao, intervalo de tempo e cor
+- Edicao e exclusao de eventos
+- Categorias de eventos codificadas por cores
+- Eventos recorrentes (diario, semanal, mensal)
+- Filtragem por busca em tempo real
+- Layout de grade responsivo
 
-- Node.js 20+
-- npm or yarn
-
-#### Installation
+### Inicio Rapido
 
 ```bash
-# Clone the repository
 git clone https://github.com/galafis/React-Calendar-App.git
 cd React-Calendar-App
-
-# Install dependencies
 npm install
-```
-
-#### Running
-
-```bash
-# Development mode
-npm run dev
-
-# Production build
-npm run build
 npm start
 ```
 
-### 📁 Estrutura do Projeto
+### Licenca
 
-```
-React-Calendar-App/
-├── src/          # Source code
-│   └── App.js
-├── LICENSE
-├── README.md
-└── package.json
-```
+Licenca MIT - veja [LICENSE](LICENSE) para detalhes.
 
-### 🛠️ Stack Tecnológica
-
-| Tecnologia | Descrição | Papel |
-|------------|-----------|-------|
-| **JavaScript** | Core Language | Primary |
-| **React** | Frontend UI library | Framework |
-
-### 🤝 Contribuindo
-
-Contribuições são bem-vindas! Sinta-se à vontade para enviar um Pull Request.
-
-### 📄 Licença
-
-Este projeto está licenciado sob a Licença MIT - veja o arquivo [LICENSE](LICENSE) para detalhes.
-
-### 👤 Autor
+### Autor
 
 **Gabriel Demetrios Lafis**
 - GitHub: [@galafis](https://github.com/galafis)
