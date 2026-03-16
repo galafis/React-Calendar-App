@@ -1,5 +1,15 @@
 # React Calendar App
 
+<div align="center">
+
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=white)
+![React](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=white)
+![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
+![License-MIT](https://img.shields.io/badge/License--MIT-yellow?style=for-the-badge)
+
+</div>
+
+
 Feature-rich calendar application built with React featuring month and week views, event creation and editing, search functionality, recurring events, and a responsive design.
 
 [English](#english) | [Portugues](#portugues)
